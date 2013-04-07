@@ -1,0 +1,15 @@
+diff --git a/src/gui/styles/qstylesheetstyle.cpp b/src/gui/styles/qstylesheetstyle.cpp
+index 1efe339..d17a22f 100644
+--- a/src/gui/styles/qstylesheetstyle.cpp
++++ b/src/gui/styles/qstylesheetstyle.cpp
+@@ -4157,6 +4157,10 @@ void QStyleSheetStyle::drawPrimitive(PrimitiveElement pe, const QStyleOption *op
+         pseudoElement = PseudoElement_DownArrow;
+         break;
+ 
++    case PE_IndicatorArrowUp:
++        pseudoElement = PseudoElement_UpArrow;
++        break;
++
+     case PE_IndicatorRadioButton:
+         pseudoElement = PseudoElement_ExclusiveIndicator;
+         break;

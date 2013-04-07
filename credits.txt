@@ -1,0 +1,6 @@
+CREDITS for Thirdparty
+----------------------
+
+A list of all contributors:
+
+Andreas Pedersen 	CentOS system and support

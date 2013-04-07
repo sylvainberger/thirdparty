@@ -1,0 +1,19 @@
+*** CMakeLists.txt.orig	Fri Jan 20 23:49:41 2012
+--- CMakeLists.txt	Tue Feb  7 21:43:56 2012
+***************
+*** 57,63 ****
+  
+  INSTALL( TARGETS AlembicUtil
+           LIBRARY DESTINATION lib
+!          ARCHIVE DESTINATION lib/static )
+  
+  INSTALL( FILES ${H_FILES}
+           DESTINATION include/Alembic/Util
+--- 57,63 ----
+  
+  INSTALL( TARGETS AlembicUtil
+           LIBRARY DESTINATION lib
+!          ARCHIVE DESTINATION lib )
+  
+  INSTALL( FILES ${H_FILES}
+           DESTINATION include/Alembic/Util

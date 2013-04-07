@@ -1,0 +1,117 @@
+*** Makefile.orig	Thu Aug 25 16:17:55 2011
+--- Makefile	Sun Jan 29 22:03:27 2012
+***************
+*** 91,104 ****
+  
+  # GLEW libraries
+  
+! glew.lib: lib lib/$(LIB.SHARED) lib/$(LIB.STATIC) glew.pc
+  
+  lib:
+  	mkdir lib
+  
+- lib/$(LIB.STATIC): $(LIB.OBJS)
+- 	$(AR) cr $@ $^
+- 
+  lib/$(LIB.SHARED): $(LIB.SOBJS)
+  	$(LD) $(LDFLAGS.SO) -o $@ $^ $(LIB.LDFLAGS) $(LIB.LIBS)
+  ifeq ($(filter-out mingw% cygwin,$(SYSTEM)),)
+--- 91,101 ----
+  
+  # GLEW libraries
+  
+! glew.lib: lib lib/$(LIB.SHARED) glew.pc
+  
+  lib:
+  	mkdir lib
+  
+  lib/$(LIB.SHARED): $(LIB.SOBJS)
+  	$(LD) $(LDFLAGS.SO) -o $@ $^ $(LIB.LDFLAGS) $(LIB.LIBS)
+  ifeq ($(filter-out mingw% cygwin,$(SYSTEM)),)
+***************
+*** 126,135 ****
+  
+  # GLEW MX libraries
+  
+! glew.lib.mx:  lib lib/$(LIB.SHARED.MX) lib/$(LIB.STATIC.MX) glewmx.pc
+! 
+! lib/$(LIB.STATIC.MX): $(LIB.OBJS.MX)
+! 	$(AR) cr $@ $^
+  
+  lib/$(LIB.SHARED.MX): $(LIB.SOBJS.MX)
+  	$(LD) $(LDFLAGS.SO.MX) -o $@ $^ $(LIB.LDFLAGS) $(LIB.LIBS)
+--- 123,129 ----
+  
+  # GLEW MX libraries
+  
+! glew.lib.mx:  lib lib/$(LIB.SHARED.MX) glewmx.pc
+  
+  lib/$(LIB.SHARED.MX): $(LIB.SOBJS.MX)
+  	$(LD) $(LDFLAGS.SO.MX) -o $@ $^ $(LIB.LDFLAGS) $(LIB.LIBS)
+***************
+*** 173,179 ****
+  
+  install.all: install install.mx install.bin
+  
+! install:     install.include install.lib install.pkgconfig
+  
+  install.mx:  install.include install.lib.mx install.pkgconfig.mx
+  
+--- 167,173 ----
+  
+  install.all: install install.mx install.bin
+  
+! install:     install.include install.lib install.bin install.pkgconfig
+  
+  install.mx:  install.include install.lib.mx install.pkgconfig.mx
+  
+***************
+*** 195,202 ****
+  else
+  	$(LN) $(LIB.SHARED) $(LIBDIR)/$(LIB.DEVLNK)
+  endif
+- 	$(STRIP) -x lib/$(LIB.STATIC)
+- 	$(INSTALL) -m 0644 lib/$(LIB.STATIC) $(LIBDIR)/
+  
+  install.lib.mx: glew.lib.mx
+  	$(INSTALL) -d -m 0755 $(LIBDIR)
+--- 189,194 ----
+***************
+*** 216,223 ****
+  else
+  	$(LN) $(LIB.SHARED.MX) $(LIBDIR)/$(LIB.DEVLNK.MX)
+  endif
+- 	$(STRIP) -x lib/$(LIB.STATIC.MX)
+- 	$(INSTALL) -m 0644 lib/$(LIB.STATIC.MX) $(LIBDIR)/
+  
+  install.bin: glew.bin
+  	$(INSTALL) -d -m 0755 $(BINDIR)
+--- 208,213 ----
+***************
+*** 250,263 ****
+  	$(RM) $(LIBDIR)/$(LIB.SONAME) $(LIBDIR)/$(LIB.SONAME.MX)
+  	$(RM) $(LIBDIR)/$(LIB.SHARED) $(LIBDIR)/$(LIB.SHARED.MX)
+  endif
+- 	$(RM) $(LIBDIR)/$(LIB.STATIC) $(LIBDIR)/$(LIB.STATIC.MX)
+- 	$(RM) $(BINDIR)/$(GLEWINFO.BIN) $(BINDIR)/$(VISUALINFO.BIN)
+  
+  clean:
+- 	$(RM) $(LIB.OBJS) $(LIB.OBJS.MX)
+  	$(RM) $(LIB.SOBJS) $(LIB.SOBJS.MX)
+! 	$(RM) lib/$(LIB.STATIC) lib/$(LIB.SHARED) lib/$(LIB.DEVLNK) lib/$(LIB.SONAME) $(LIB.STATIC)
+! 	$(RM) lib/$(LIB.STATIC.MX) lib/$(LIB.SHARED.MX) lib/$(LIB.DEVLNK.MX) lib/$(LIB.SONAME.MX) $(LIB.STATIC.MX)
+  	$(RM) $(GLEWINFO.BIN.OBJS) bin/$(GLEWINFO.BIN) $(VISUALINFO.BIN.OBJS) bin/$(VISUALINFO.BIN)
+  	$(RM) glew.pc glewmx.pc
+  # Compiler droppings
+--- 240,250 ----
+  	$(RM) $(LIBDIR)/$(LIB.SONAME) $(LIBDIR)/$(LIB.SONAME.MX)
+  	$(RM) $(LIBDIR)/$(LIB.SHARED) $(LIBDIR)/$(LIB.SHARED.MX)
+  endif
+  
+  clean:
+  	$(RM) $(LIB.SOBJS) $(LIB.SOBJS.MX)
+! 	$(RM) lib/$(LIB.SHARED) lib/$(LIB.DEVLNK) lib/$(LIB.SONAME)
+! 	$(RM) lib/$(LIB.SHARED.MX) lib/$(LIB.DEVLNK.MX) lib/$(LIB.SONAME.MX)
+  	$(RM) $(GLEWINFO.BIN.OBJS) bin/$(GLEWINFO.BIN) $(VISUALINFO.BIN.OBJS) bin/$(VISUALINFO.BIN)
+  	$(RM) glew.pc glewmx.pc
+  # Compiler droppings

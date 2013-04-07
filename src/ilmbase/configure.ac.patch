@@ -1,0 +1,12 @@
+*** configure.ac.orig	Wed Nov  9 22:09:10 2011
+--- configure.ac	Wed Nov  9 22:09:31 2011
+***************
+*** 95,101 ****
+  case "$host" in
+  *darwin*) 
+    dnl Compiler flags for all OS X builds
+-   CXXFLAGS="$CXXFLAGS -Wno-long-double"
+  
+    dnl OSX architectures specification
+    dnl NOTE: multiple architectures requires --disable-dependency-tracking
+--- 95,100 ----

@@ -1,0 +1,12 @@
+*** CtlLex.cpp.orig	2007-03-20 18:48:40.000000000 +0100
+--- CtlLex.cpp	2012-12-26 20:10:27.788794155 +0100
+***************
+*** 57,62 ****
+--- 57,63 ----
+  #include <CtlLContext.h>
+  #include <iomanip>
+  #include <cassert>
++ #include <stdlib.h>
+  
+  
+  #if 0

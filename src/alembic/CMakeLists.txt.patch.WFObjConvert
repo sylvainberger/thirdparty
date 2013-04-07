@@ -1,0 +1,33 @@
+*** CMakeLists.txt.orig	Fri Jan 20 23:49:39 2012
+--- CMakeLists.txt	Tue Feb  7 19:01:09 2012
+***************
+*** 55,66 ****
+  SET( H_FILES ${PUBLIC_H_FILES} ${PRIVATE_H_FILES} )
+  
+  SET( SOURCE_FILES ${CXX_FILES} ${H_FILES} )
+  
+  ADD_LIBRARY( AbcWFObjConvert ${SOURCE_FILES} )
+  
+  INSTALL( TARGETS AbcWFObjConvert
+           LIBRARY DESTINATION lib
+!          ARCHIVE DESTINATION lib/static )
+  
+  INSTALL( FILES ${PUBLIC_H_FILES}
+           DESTINATION include/AbcClients/WFObjConvert
+--- 55,70 ----
+  SET( H_FILES ${PUBLIC_H_FILES} ${PRIVATE_H_FILES} )
+  
+  SET( SOURCE_FILES ${CXX_FILES} ${H_FILES} )
++ SET( THIS_LIBS
++     AlembicAbc 
++     AlembicAbcGeom )
+  
+  ADD_LIBRARY( AbcWFObjConvert ${SOURCE_FILES} )
++ TARGET_LINK_LIBRARIES( AbcWFObjConvert ${THIS_LIBS} )
+  
+  INSTALL( TARGETS AbcWFObjConvert
+           LIBRARY DESTINATION lib
+!          ARCHIVE DESTINATION lib )
+  
+  INSTALL( FILES ${PUBLIC_H_FILES}
+           DESTINATION include/AbcClients/WFObjConvert

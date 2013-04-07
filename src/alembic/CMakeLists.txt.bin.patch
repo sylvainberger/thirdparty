@@ -1,0 +1,19 @@
+*** CMakeLists.txt.orig	Fri Jan 20 23:49:39 2012
+--- CMakeLists.txt	Sat Jan 28 19:34:45 2012
+***************
+*** 33,39 ****
+  ##
+  ##-*****************************************************************************
+  
+! IF ( GLUT_Xmu_LIBRARY OR WINDOWS)
+    IF ( Boost_PROGRAM_OPTIONS_FOUND )
+      MESSAGE( STATUS "Including SimpleAbcViewer" )
+      ADD_SUBDIRECTORY( SimpleAbcViewer )
+--- 33,39 ----
+  ##
+  ##-*****************************************************************************
+  
+! IF ( GLUT_FOUND OR WINDOWS)
+    IF ( Boost_PROGRAM_OPTIONS_FOUND )
+      MESSAGE( STATUS "Including SimpleAbcViewer" )
+      ADD_SUBDIRECTORY( SimpleAbcViewer )

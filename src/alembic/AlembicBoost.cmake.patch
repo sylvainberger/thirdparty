@@ -1,0 +1,19 @@
+*** AlembicBoost.cmake.orig	Fri Jan 20 23:49:39 2012
+--- AlembicBoost.cmake	Fri Jan 27 19:29:17 2012
+***************
+*** 107,113 ****
+  # Find the static and multi-threaded version only
+  #-******************************************************************************
+  #-******************************************************************************
+! SET( Boost_USE_STATIC_LIBS TRUE )
+  SET( Boost_USE_MULTITHREADED TRUE )
+  
+  #- Alembic's python bridge boost-python 1.44 (for bug fixes)
+--- 107,113 ----
+  # Find the static and multi-threaded version only
+  #-******************************************************************************
+  #-******************************************************************************
+! #SET( Boost_USE_STATIC_LIBS TRUE )
+  SET( Boost_USE_MULTITHREADED TRUE )
+  
+  #- Alembic's python bridge boost-python 1.44 (for bug fixes)

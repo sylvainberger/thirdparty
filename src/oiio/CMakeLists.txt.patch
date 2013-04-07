@@ -1,0 +1,19 @@
+*** CMakeLists.txt.orig	Thu Feb  2 21:23:21 2012
+--- CMakeLists.txt	Thu Feb  2 21:22:46 2012
+***************
+*** 15,21 ****
+      link_ilmbase (iv)
+      target_link_libraries (iv OpenImageIO ${QT_LIBRARIES} ${OPENGL_LIBRARIES} 
+                                 ${Boost_LIBRARIES} ${CMAKE_DL_LIBS}
+!                                ${GLEW_LIBRARIES})
+      oiio_install_targets (iv)
+  
+  else ()
+--- 15,21 ----
+      link_ilmbase (iv)
+      target_link_libraries (iv OpenImageIO ${QT_LIBRARIES} ${OPENGL_LIBRARIES} 
+                                 ${Boost_LIBRARIES} ${CMAKE_DL_LIBS}
+!                                ${GLEW_LIBRARIES} "-framework Cocoa")
+      oiio_install_targets (iv)
+  
+  else ()

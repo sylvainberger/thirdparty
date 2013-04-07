@@ -1,0 +1,12 @@
+*** configure.ac.orig	2010-07-23 02:41:37.000000000 +0200
+--- configure.ac	2012-12-27 12:30:56.386793840 +0100
+***************
+*** 120,125 ****
+--- 120,126 ----
+     [$OPENEXR_CTL_CXXFLAGS],
+     [$OPENEXR_CTL_LDFLAGS],
+     [$OPENEXR_CTL_LIBS],[[
++ #include <stdlib.h>
+  #include <ImfCtlApplyTransforms.h>
+  #include <CtlSimdInterpreter.h>
+  #include <ImfHeader.h>

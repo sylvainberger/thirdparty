@@ -1,0 +1,12 @@
+*** ImathMatrix.orig	2010-07-17 00:48:40.000000000 +0200
+--- ImathMatrix.h	2012-12-16 20:26:12.276492289 +0100
+***************
+*** 49,54 ****
+--- 49,55 ----
+  #include "ImathVec.h"
+  #include "ImathShear.h"
+  
++ #include <string.h>
+  #include <iostream>
+  #include <iomanip>
+  

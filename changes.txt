@@ -1,0 +1,75 @@
+Thirdparty changes:
+
+Release 0.1.1 (as of Jan 25 2013)
+--------------------------------
+Major new features:
+
+Thirdparty changes:
+
+* Qt qstylesheetstyle patch.
+
+* Fixed install_pkg.sh sed syntax on macosx. 
+
+* Renamed text files to lowercase.
+
+Release 0.1.0 (as of Dec 22 2012)
+--------------------------------
+Major new features:
+
+Thirdparty changes:
+
+* First linux release.
+
+* Build fixes.
+
+Release 0.0.0 (as of Feb 8 2012)
+--------------------------------
+Major new features:
+
+Thirdparty changes:
+
+* First package.
+
+* Removed tbb lib.
+
+In-progress (as of Feb 11 2012)
+-------------------------------
+
+Thirdparty todo:
+
+For developers:
+
+* Build: CMake, refactor CMakeLists.txt with macro includes.
+
+* Build: Qt, support plugins.
+
+* Build: GLUT, for non Apple platforms.
+
+* Build: HDF5, -fPIC CFLAGS and LDFLAGS as in Alembic doc/HDF5-howtobuild.txt.
+
+* Build: Openexr_viewers, exrdisplay says incorrectly @executable… for cg framework.
+
+* Build: OCIO, uses patch for static oiio dependencies, is there a better way?
+
+* Build: OIIO, support Webp, hdf5 and field3d.
+
+* Build: Add comment to all custom commands.
+
+* Build: QtTest ~/Frameworks/QtTest.framework/Versions/4/4 - cannot read symlink, skipped for now.
+  See: https://bugreports.qt-project.org/browse/QTBUG-24365
+  
+* Project: Add content license for Alembic, OCIO and OpenEXR models/images.
+
+Future ideas (as of Jan 4 2012)
+-------------------------------
+
+Thirdparty ideas:
+
+* Build: Wget, download of all source packages. Needs more test.
+
+* Build: Win, use MSBuild + existing project vcproj files.
+  See: http://msdn.microsoft.com/en-us/library/ms164311(v=vs.85).aspx
+
+* Build: Docs, add thirdparty doc index.
+
+

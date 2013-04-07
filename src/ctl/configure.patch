@@ -1,0 +1,12 @@
+*** configure.orig	Sun Nov 13 22:41:38 2011
+--- configure	Sun Nov 13 22:41:45 2011
+***************
+*** 21368,21374 ****
+      CXXFLAGS="$CXXFLAGS -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch ppc -arch i386"
+        fi
+  
+-   CXXFLAGS="$CXXFLAGS -Wno-long-double"
+    ;;
+  esac
+  
+--- 21368,21373 ----

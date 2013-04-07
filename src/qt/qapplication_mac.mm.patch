@@ -1,0 +1,30 @@
+*** qapplication_mac.mm.orig	Mon Sep 12 08:49:28 2011
+--- qapplication_mac.mm	Thu Feb  2 22:39:21 2012
+***************
+*** 1252,1258 ****
+      if (oldDelegate != newDelegate && !QApplication::testAttribute(Qt::AA_MacPluginApplication)) {
+          [newDelegate setReflectionDelegate:oldDelegate];
+          [cocoaApp setDelegate:newDelegate];
+! 
+          QT_MANGLE_NAMESPACE(QCocoaMenuLoader) *qtMenuLoader = [[QT_MANGLE_NAMESPACE(QCocoaMenuLoader) alloc] init];
+          if ([NSBundle loadNibNamed:@"qt_menu" owner:qtMenuLoader] == false) {
+              qFatal("Qt internal error: qt_menu.nib could not be loaded. The .nib file"
+--- 1252,1259 ----
+      if (oldDelegate != newDelegate && !QApplication::testAttribute(Qt::AA_MacPluginApplication)) {
+          [newDelegate setReflectionDelegate:oldDelegate];
+          [cocoaApp setDelegate:newDelegate];
+!         
+!         #if 0
+          QT_MANGLE_NAMESPACE(QCocoaMenuLoader) *qtMenuLoader = [[QT_MANGLE_NAMESPACE(QCocoaMenuLoader) alloc] init];
+          if ([NSBundle loadNibNamed:@"qt_menu" owner:qtMenuLoader] == false) {
+              qFatal("Qt internal error: qt_menu.nib could not be loaded. The .nib file"
+***************
+*** 1263,1268 ****
+--- 1264,1270 ----
+          [cocoaApp setMenu:[qtMenuLoader menu]];
+          [newDelegate setMenuLoader:qtMenuLoader];
+          [qtMenuLoader release];
++         #endif
+      }
+  #endif
+      // Register for Carbon tablet proximity events on the event monitor target.

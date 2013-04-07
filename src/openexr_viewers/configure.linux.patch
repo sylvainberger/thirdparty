@@ -1,0 +1,12 @@
+*** configure.orig	2010-07-23 02:46:30.000000000 +0200
+--- configure	2012-12-27 12:30:20.523729073 +0100
+***************
+*** 20205,20210 ****
+--- 20205,20211 ----
+  cat >>conftest.$ac_ext <<_ACEOF
+  /* end confdefs.h.  */
+  
++ #include <stdlib.h>
+  #include <ImfCtlApplyTransforms.h>
+  #include <CtlSimdInterpreter.h>
+  #include <ImfHeader.h>

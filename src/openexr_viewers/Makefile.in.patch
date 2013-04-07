@@ -1,0 +1,17 @@
+*** Makefile.in.orig	Tue Nov 15 21:52:04 2011
+--- Makefile.in	Tue Nov 15 21:52:49 2011
+***************
+*** 517,528 ****
+  	uninstall-info-am
+  
+  
+- @HAVE_FLTK_TRUE@all-local:
+- @HAVE_FLTK_TRUE@	@FLTK_CONFIG@ --post exrdisplay
+- 
+- @HAVE_FLTK_TRUE@install-exec-hook:
+- @HAVE_FLTK_TRUE@	@FLTK_CONFIG@ --post $(DESTDIR)$(bindir)/exrdisplay
+- 
+  @HAVE_FLTK_FALSE@install-exec-hook:
+  # Tell versions [3.59,3.63) of GNU make to not export all variables.
+  # Otherwise a system limit (for SysV at least) may be exceeded.
+--- 517,522 ----

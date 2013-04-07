@@ -1,0 +1,31 @@
+PLATFORMS for Thirdparty
+------------------------
+
+ thirdparty       
+
+ Linux versions
+
+     - CentOS 6.3 (Final) - gcc version 4.4.6 
+       
+       Requirements:
+         
+         Yum installer: yum install gcc-c++ python-devel libXi-devel glut-devel mesa-libGLU-devel gstream*
+         
+         Cmake: cmake 2.8 (install from rpm)
+         http://www.cmake.org/cmake/resources/software.html
+
+         CG Toolkit: https://developer.nvidia.com/cg-toolkit-download
+         (Make sure the appropriate arch version is installed, 32/64-bit)
+
+         rpm -ivh Cg-3.1_April2012_x86_64.rpm
+
+ Mac versions
+
+     - MacOSX 10.7 (Snow Lion) - gcc version 4.2.1
+
+       Requirements: Xcode 4.1
+
+ Win versions
+
+     - not yet supported.
+

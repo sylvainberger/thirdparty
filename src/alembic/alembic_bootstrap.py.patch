@@ -1,0 +1,29 @@
+*** alembic_bootstrap.py.orig	Fri Jan 20 23:49:39 2012
+--- alembic_bootstrap.py	Fri Jan 27 23:24:25 2012
+***************
+*** 944,949 ****
+--- 944,952 ----
+  
+          if opts.cxxflags:
+              cmake_extra_args += ' -D CMAKE_CXX_FLAGS:STRING="%s"' % opts.cxxflags
++             
++         if opts.install_dir:
++             cmake_extra_args += ' -D CMAKE_INSTALL_PREFIX:STRING="%s"' % opts.install_dir 
+  
+  
+      cmake_cmd = 'cmake %s %s %s' % ( cmake_bootstrap_string, cmake_extra_args,
+***************
+*** 1061,1066 ****
+--- 1064,1075 ----
+      configOptions.add_option( "--disable-maya", dest="disable_maya",
+                                action="store_true", default=False,
+                                help="Disable Maya" )
++                               
++     configOptions.add_option( "--install-dir", dest="install_dir",
++                               type="string", default=None,
++                               help="Install directory",
++                               metavar="INSTALL_DIR" )
++ 
+  
+      parser.add_option_group(configOptions)
+  

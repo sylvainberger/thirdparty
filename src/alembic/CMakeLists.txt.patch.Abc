@@ -1,0 +1,32 @@
+*** CMakeLists.txt.orig	Fri Jan 20 23:49:40 2012
+--- CMakeLists.txt	Mon Feb  6 22:16:01 2012
+***************
+*** 88,99 ****
+  )
+  
+  SET( SOURCE_FILES ${CXX_FILES} ${H_FILES} )
+! 
+  ADD_LIBRARY( AlembicAbc ${SOURCE_FILES} )
+  
+  INSTALL( TARGETS AlembicAbc
+           LIBRARY DESTINATION lib
+!          ARCHIVE DESTINATION lib/static )
+   
+  INSTALL( FILES ${H_FILES}
+           DESTINATION include/Alembic/Abc
+--- 88,102 ----
+  )
+  
+  SET( SOURCE_FILES ${CXX_FILES} ${H_FILES} )
+! SET( THIS_LIBS
+!     AlembicAbcCoreAbstract )
+!     
+  ADD_LIBRARY( AlembicAbc ${SOURCE_FILES} )
++ TARGET_LINK_LIBRARIES( AlembicAbc ${THIS_LIBS} )
+  
+  INSTALL( TARGETS AlembicAbc
+           LIBRARY DESTINATION lib
+!          ARCHIVE DESTINATION lib )
+   
+  INSTALL( FILES ${H_FILES}
+           DESTINATION include/Alembic/Abc

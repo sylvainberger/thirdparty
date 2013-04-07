@@ -1,0 +1,80 @@
+MANIFEST for Thirdparty
+-----------------------
+
+ thirdparty
+
+ dist libraries
+ 
+     - alembic - Alembic
+       depends on: glew, hdf5, ilmbase, boost and zlib
+
+     - bzip2 - Bzip2
+     
+     - boost - Boost C++ Libraries
+       depends on: bzip2 zlib
+
+     - glew - The OpenGL Extension Wrangler Library
+     
+     - gtest - Google C++ Testing Framework
+     
+     - hdf5 - HDF5
+       depends on: zlib
+       
+     - ilmbase - Ilmbase
+     
+     - jasper - Jasper
+     
+     - jpeg - Jpeg
+     
+     - libpng - LibPNG
+
+     - ocio - OpenColorIO
+       depends on: oiio
+     
+     - oiio - OpenImageIO
+       depends on: boost glew ilmbase jasper jpeg libpng openexr qt tiff
+     
+     - openexr - OpenEXR
+       depends on: ilmbase zlib
+       
+     - qt - Qt framework
+       depends on: libpng tiff jpeg zlib
+     
+     - tiff - LibTiff - TIFF Libraries and Utilities
+       depends on: jpeg zlib
+       
+     - zlib - Zlib
+     
+ development libraries
+
+     - ctl - Color transformation language
+       depends on: ilmbase
+
+     - fltk - Fast Light Tool Kit (FLTK)
+       depends on: jpeg libpng zlib tiff
+       
+     - openexr_ctl - OpenEXR CTL
+       depends on: openexr ctl
+
+ viewers
+     
+     - openexr_viewers
+       depends on: openexr ctl fltk
+     
+ media
+ 
+     - alembic-examples - Alembic Octopus example
+     
+     - jpeg2000_images - Jpeg 2000 images
+     
+     - ocio-images - OpenColorIO images
+     
+     - oiio-images - OpenImageIO images
+ 
+     - openexr-images - OpenEXR images
+     
+ tests
+
+     - QtTest - Qt Test program
+       depends on: qt
+

@@ -1,0 +1,71 @@
+INSTALL for Thirdparty
+----------------------
+
+The thirdparty build system requires CMake.
+Get it from: http://www.cmake.org.
+
+Some build configurations requires python for bootstrapping and setup.
+Get it from: http://www.python.org.
+
+Building thirdparty on Linux and OS X
+-------------------------------------
+
+The thirdparty library can be built from the top directory by typing 
+make. Advanced users can use CMake directly, see CMakeLists.txt.
+
+The build will create both a build and a dist directory. The build directory
+contains both libraries and binary files suitable for development and test 
+while the dist directory contains the final library files for distribution.
+Only includes, libraries and pkgconfig files will be copied to the dist 
+directory.
+
+For both the build and dist directory a platform directory will be
+created with the name of the platform you are building for (e.g. linux,
+macosx or win).
+
+See the MANIFEST file for the main projects and their dependencies.
+
+Running make
+------------
+
+Make targets you should know about:
+
+    make                      Build all projects for development and test in 
+			                  'build/platform', install distribution libraries in 
+			                  'dist/platform'.
+    make debug                Build all projects with debugging symbols when
+			                  possible.
+    make clean                Get rid of all the temporary files in 'build/platform'.
+    make realclean            Get rid of both 'build/platform' and 'dist/platform'.
+    make nuke                 Get rid of all 'build' and 'dist' and all platforms.
+    make help                 Print all the make options
+
+Additionally, a few helpful modifiers alter some build-time options:
+
+    make verbose=0 ...        Show all compilation commands
+    make build_libs=1 ...     Build libraries
+    make build_viewers=1 ...  Build viewers
+    make build_tests=1 ...    Build tests
+    make build_media=1 ...    Build media
+    make build_static=0 ...   Build static library instead of shared
+
+
+Build and dist directory
+------------------------
+
+The build directory contains all files built by the make process. After the make process
+completes the libraries and include files will be copied to the dist directory.
+
+Mac: The supplied install_name.sh will add the full path name as the install id for all
+libraries and their dependencies, this can be modified by changing the 'build_prefix_lib'
+and 'build_prefix_framework' variable in top CMakeLists.txt. Use standard 
+'@executable_path/../lib' and '@executable_path/../Frameworks' prefixes if library 
+install names are not handled by the end application build.
+
+Building on Windows
+-------------------
+
+Windows not yet supported.
+
+Good Luck!
+

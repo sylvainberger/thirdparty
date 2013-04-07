@@ -1,0 +1,20 @@
+*** Makefile.am.orig	Tue Nov 15 21:51:51 2011
+--- Makefile.am	Tue Nov 15 21:52:29 2011
+***************
+*** 11,25 ****
+  	@OPENEXR_CTL_LDFLAGS@ \
+  	@OPENEXR_CTL_LIBS@
+  
+- all-local:
+- 	@FLTK_CONFIG@ --post exrdisplay
+- 
+- install-exec-hook:
+- 	@FLTK_CONFIG@ --post $(DESTDIR)$(bindir)/exrdisplay
+- 
+- else
+- install-exec-hook:
+- 
+  endif
+  
+  
+--- 11,16 ----

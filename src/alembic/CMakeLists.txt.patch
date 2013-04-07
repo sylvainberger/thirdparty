@@ -1,0 +1,15 @@
+*** CMakeLists.txt.orig	Fri Jan 20 23:49:39 2012
+--- CMakeLists.txt	Sat Jan 28 20:14:47 2012
+***************
+*** 119,128 ****
+  #-******************************************************************************
+  #-******************************************************************************
+  
+- SET( ORIGINAL_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX} )
+- SET( CMAKE_INSTALL_PREFIX
+-      ${ORIGINAL_INSTALL_PREFIX}/alembic-${VERSION} )
+- 
+  # Tell me what my install location would be
+  MESSAGE(STATUS "The install dir is ${CMAKE_INSTALL_PREFIX}" )
+  
+--- 119,124 ----
