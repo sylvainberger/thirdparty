@@ -62,12 +62,12 @@ SET( inc_files
 IF ( CMAKE_SHARED_LIBS )
     SET( lib_files
         jpeg
-        jpeg.8
+        jpeg.9
     )
-    # 8.3.0 is not built on apple
+    # 9.3.0 is not built on apple
     IF( LINUX )
         SET( ${lib_files}
-             jpeg.8.3.0
+             jpeg.9.3.0
         )
     ENDIF()
 ELSE()
@@ -145,6 +145,26 @@ IF( UNIX )
     SET( build_uncompress
         ${untar} ${lib_src_dir}/${lib_pkg}src.v9.tar.gz -C ${lib_bin_dir}
     )
+    
+    # patch
+
+    IF (APPLE)
+
+        # darwin kernel versions
+        # 9.8.0 > Leopard (Mac OS X v10.5)
+        # 10.4.0 -> Snow Leopard (Mac OS X v10.6)
+        # 11.0.0 > Lion (Mac OS X v10.7)
+
+        STRING( REGEX MATCH "[0-9]+" DARWIN_VERSION ${CMAKE_HOST_SYSTEM_VERSION})
+
+        IF ( DARWIN_VERSION GREATER 9 )
+
+            SET( build_patch
+                patch ${lib_bin_dir}/${lib_pkg}-9/jmorecfg.h ${lib_src_dir}/jmorecfg.h.patch
+            )
+        ENDIF()
+
+    ENDIF()  
 
     # options
 
@@ -158,7 +178,7 @@ IF( UNIX )
 
     SET( build_make
         ${build_env} &&
-    	cd ${lib_pkg}-8c &&
+    	cd ${lib_pkg}-9 &&
         ./configure 
             --prefix=${build_dir}
             ${build_options} &&
@@ -192,6 +212,7 @@ IF( UNIX )
     ADD_CUSTOM_COMMAND( 
         OUTPUT ${bin_output} ${inc_output} ${lib_output}
         COMMAND ${build_uncompress}
+        COMMAND ${build_patch}
         COMMAND ${build_make}
         COMMAND ${build_script}
     )
