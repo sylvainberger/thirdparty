@@ -42,9 +42,9 @@ Thirdparty is not:
 
 Github:
 
-  Project  https://github.com/imageplayer
-  Issues   https://github.com/imageplayer/thirdparty/issues
-  Wiki     https://github.com/imageplayer/thirdparty/wiki
+  Project  https://github.com/loupetools
+  Issues   https://github.com/loupetools/thirdparty/issues
+  Wiki     https://github.com/loupetools/thirdparty/wiki
 
 Contact:
 
