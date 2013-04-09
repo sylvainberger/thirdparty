@@ -1,5 +1,5 @@
 ##-*****************************************************************************
-##  Copyright 2010-2012 Mikael Sundell and the other authors and contributors.
+##  Copyright 2010-2013 Mikael Sundell and the other authors and contributors.
 ##  All Rights Reserved.
 ##
 ##  jpeg CMakeLists.txt for thirdparty
@@ -9,7 +9,7 @@
 # jpeg Copyright
 # Copyright (C) 1991-1997, Thomas G. Lane.
 
-# jpeg from ijg.org 8c 2011-11-18
+# jpeg from ijg.org 9 2013-04-09
 # http://www.ijg.org/files/
 
 MESSAGE( STATUS " Adding jpeg library" )
@@ -143,7 +143,7 @@ IF( UNIX )
     # tar uncompress
 
     SET( build_uncompress
-        ${untar} ${lib_src_dir}/${lib_pkg}src.v8c.tar.gz -C ${lib_bin_dir}
+        ${untar} ${lib_src_dir}/${lib_pkg}src.v9.tar.gz -C ${lib_bin_dir}
     )
 
     # options
