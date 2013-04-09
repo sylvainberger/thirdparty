@@ -1,5 +1,5 @@
 ##-*****************************************************************************
-##  Copyright 2010-2012 Mikael Sundell and the other authors and contributors.
+##  Copyright 2010-2013 Mikael Sundell and the other authors and contributors.
 ##  All Rights Reserved.
 ##
 ##  libtiff CMakeLists.txt for thirdparty
@@ -10,8 +10,8 @@
 # Copyright (c) 1988-1997 Sam Leffler
 # Copyright (c) 1991-1997 Silicon Graphics, Inc.
 
-# libtiff from libtiff.maptools.org 3.8.2 2011-11-18
-# http://libtiff.maptools.org/dl/
+# libtiff from libtiff.maptools.org 4.0.3 2013-04-09
+# ftp://ftp.remotesensing.org/pub/libtiff
 
 MESSAGE( STATUS " Adding tiff library" )
 
@@ -25,7 +25,7 @@ SET( lib_name "tiff" )
 
 # lib pkg
 
-SET( lib_pkg ${lib_name}-3.8.2 )
+SET( lib_pkg ${lib_name}-4.0.3 )
 
 # lib src dir
 
@@ -81,15 +81,15 @@ SET( inc_files
 IF ( CMAKE_SHARED_LIBS )
     SET( lib_files
         tiff
-        tiff.3
+        tiff.5
         tiffxx
-        tiffxx.3
+        tiffxx.5
     )
-    # 3.8.2 is not built on apple
+    # 4.0.3 is not built on apple
     IF( LINUX )
         SET( ${lib_files}
-             tiff.3.8.2
-             tiffxx.3.8.2
+             tiff.5.0.3
+             tiffxx.5.0.3
         )
     ENDIF()
 ELSE()
@@ -179,6 +179,12 @@ IF( UNIX )
     ELSE()
         SET( build_options ${build_options} --enable-static --disable-shared )
     ENDIF()
+    
+    # HAVE_APPLE_OPENGL_FRAMEWORK needed on apple since 4.0.3
+    
+    IF( APPLE )
+        SET( CFLAGS CFLAGS=-DHAVE_APPLE_OPENGL_FRAMEWORK )
+    ENDIF()
 
     # configure, make and install
 
@@ -187,6 +193,7 @@ IF( UNIX )
     	cd ${lib_pkg} &&
         ./configure 
             --prefix=${build_dir}
+            ${CFLAGS}
             CPPFLAGS=-I${build_inc_dir}
             LDFLAGS=-L${build_lib_dir}
             ${build_options} &&
