@@ -1,5 +1,17 @@
 Thirdparty changes:
 
+Release 0.1.2 (as of Apr 9 2013)
+--------------------------------
+Thirdparty changes:
+
+* Updated jpeg to v9.
+
+* Updated tiff to 4.0.3
+
+* Updated ocio to 1.0.7
+
+* Updated oiio to 1.1
+
 Release 0.1.1 (as of Jan 25 2013)
 --------------------------------
 Major new features:

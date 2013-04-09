@@ -1,5 +1,5 @@
-INSTALL for Thirdparty
-----------------------
+Thirdparty install
+------------------
 
 The thirdparty build system requires CMake.
 Get it from: http://www.cmake.org.

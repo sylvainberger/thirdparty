@@ -1,5 +1,5 @@
-README for Thirdparty
----------------------
+Thirdparty readme
+-----------------
 
 Introduction:
 

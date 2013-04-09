@@ -1,5 +1,5 @@
-MANIFEST for Thirdparty
------------------------
+Thirdparty manifest
+-------------------
 
  thirdparty
 

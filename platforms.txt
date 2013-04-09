@@ -1,5 +1,5 @@
-PLATFORMS for Thirdparty
-------------------------
+Thirdparty platforms
+--------------------
 
  thirdparty       
 

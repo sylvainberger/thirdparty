@@ -1,5 +1,5 @@
-CREDITS for Thirdparty
-----------------------
+Thirdparty credits
+------------------
 
 A list of all contributors:
 

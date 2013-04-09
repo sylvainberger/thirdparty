@@ -1,5 +1,5 @@
-LICENSE for Thirdparty
-----------------------
+Thirdparty license
+------------------
 
 Thirdparty Copyright
 
