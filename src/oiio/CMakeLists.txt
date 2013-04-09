@@ -1,5 +1,5 @@
 ##-*****************************************************************************
-##  Copyright 2010-2012 Mikael Sundell and the other authors and contributors.
+##  Copyright 2010-2013 Mikael Sundell and the other authors and contributors.
 ##  All Rights Reserved.
 ##
 ##  oiio CMakeLists.txt for thirdparty
@@ -10,8 +10,8 @@
 # Copyright 2008 Larry Gritz and the other authors and contributors.
 # All Rights Reserved.
 
-# oiio from github.com 0.10.0 2011-11-24
-# https://github.com/OpenImageIO/oiio/tree/RB-0.10
+# oiio from github.com 1.1 2013-04-09
+# https://github.com/OpenImageIO/oiio/tree/RB-1.1
 
 MESSAGE( STATUS " Adding oiio lib" )
 
@@ -25,7 +25,7 @@ SET( lib_name "oiio" )
 
 # lib pkg
 
-SET( lib_pkg "OpenImageIO-oiio-Release-0.10.0-105-g3ba6bef" )
+SET( lib_pkg "oiio-RB-1.1" )
 
 # lib config
 
@@ -71,8 +71,8 @@ SET( inc_dir
 IF ( CMAKE_SHARED_LIBS )
     SET( lib_files
         OpenImageIO
-        OpenImageIO.0.11
-        OpenImageIO.0.11.0
+        OpenImageIO.1.1
+        OpenImageIO.1.1.9
     )
 ELSE()
     SET( lib_files
@@ -162,7 +162,7 @@ IF( UNIX )
 
             IF ( NOT CMAKE_SHARED_LIBS )
                 SET( build_patch
-                    patch ${lib_bin_dir}/OpenImageIO-oiio-3ba6bef/src/iv/CMakeLists.txt ${lib_src_dir}/CMakeLists.txt.patch
+                    patch ${lib_bin_dir}/${lib_pkg}/src/iv/CMakeLists.txt ${lib_src_dir}/CMakeLists.txt.patch
                 )
             ENDIF()
 
@@ -212,7 +212,7 @@ IF( UNIX )
     # make and install
 
     SET( build_make
-    	cd OpenImageIO-oiio-3ba6bef &&
+    	cd ${lib_pkg} &&
     )
     
     IF( lib_cfg_thirdparty_tools )
