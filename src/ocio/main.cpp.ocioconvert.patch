@@ -1,0 +1,12 @@
+*** main.cpp.orig	Wed Apr 18 02:08:16 2012
+--- main.cpp	Tue Apr  9 22:08:52 2013
+***************
+*** 35,41 ****
+  
+  #include <OpenImageIO/imageio.h>
+  #include <OpenImageIO/typedesc.h>
+- namespace OIIO = OIIO_NAMESPACE;
+  
+  
+  #include "argparse.h"
+--- 35,40 ----

@@ -1,0 +1,12 @@
+*** main.cpp.orig	Wed Apr 18 02:08:16 2012
+--- main.cpp	Tue Apr  9 22:10:30 2013
+***************
+*** 53,59 ****
+  
+  #include <OpenImageIO/imageio.h>
+  #include <OpenImageIO/typedesc.h>
+- namespace OIIO = OIIO_NAMESPACE;
+  
+  GLint g_win = 0;
+  int g_winWidth = 0;
+--- 53,58 ----

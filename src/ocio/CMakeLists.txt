@@ -1,5 +1,5 @@
 ##-*****************************************************************************
-##  Copyright 2010-2012 Mikael Sundell and the other authors and contributors.
+##  Copyright 2010-2013 Mikael Sundell and the other authors and contributors.
 ##  All Rights Reserved.
 ##
 ##  OCIO CMakeLists.txt for thirdparty
@@ -9,8 +9,8 @@
 # OCIO Copyright
 # Copyright (c) 2003-2010 Sony Pictures Imageworks Inc., et al.
 
-# ocio from github.com 1.0.1 2011-11-24
-# https://nodeload.github.com/imageworks/OpenColorIO/tarball/v1.0.1
+# ocio from github.com 1.0.7 2013-04-09
+# https://nodeload.github.com/imageworks/OpenColorIO/tarball/v1.0.7
 
 MESSAGE( STATUS " Adding ocio lib" )
 
@@ -24,7 +24,7 @@ SET( lib_name "ocio" )
 
 # lib pkg
 
-SET( lib_pkg "imageworks-OpenColorIO-v1.0.1-0-g7215c3c" )
+SET( lib_pkg "imageworks-OpenColorIO-v1.0.7-0-g87da508" )
 
 # lib config
 
@@ -45,11 +45,11 @@ SET( lib_bin_dir
 # bin files
 
 SET( bin_files
-    ocio2icc
     ociobakelut
     ociocheck
     ocioconvert
     ociodisplay
+    ociolutimage
 )
 
 # inc dir
@@ -64,7 +64,7 @@ IF ( CMAKE_SHARED_LIBS )
     SET( lib_files
         OpenColorIO
         OpenColorIO.1
-        OpenColorIO.1.0.1
+        OpenColorIO.1.0.7
     )
 ELSE()
     SET( lib_files
@@ -139,12 +139,12 @@ IF( UNIX )
     # patch
 
     SET( build_patch
-        patch ${lib_bin_dir}/imageworks-OpenColorIO-7a16faa/src/core/CMakeLists.txt 
-              ${lib_src_dir}/CMakeLists.txt.patch.core &&
-        patch ${lib_bin_dir}/imageworks-OpenColorIO-7a16faa/src/pyglue/CMakeLists.txt 
-              ${lib_src_dir}/CMakeLists.txt.patch.pyglue &&
-patch ${lib_bin_dir}/imageworks-OpenColorIO-7a16faa/share/cmake/OCIOMacros.cmake 
-              ${lib_src_dir}/OCIOMacros.cmake.patch
+        patch ${lib_bin_dir}/imageworks-OpenColorIO-b3cb224/src/apps/ocioconvert/main.cpp 
+              ${lib_src_dir}/main.cpp.ocioconvert.patch &&
+        patch ${lib_bin_dir}/imageworks-OpenColorIO-b3cb224/src/apps/ociodisplay/main.cpp 
+              ${lib_src_dir}/main.cpp.ociodisplay.patch &&
+        patch ${lib_bin_dir}/imageworks-OpenColorIO-b3cb224/src/apps/ociolutimage/main.cpp 
+              ${lib_src_dir}/main.cpp.ociolutimage.patch
     )   
 
     # options
@@ -184,7 +184,7 @@ patch ${lib_bin_dir}/imageworks-OpenColorIO-7a16faa/share/cmake/OCIOMacros.cmake
 
     SET( build_make
         ${build_make}
-    	cd imageworks-OpenColorIO-7a16faa &&
+    	cd imageworks-OpenColorIO-b3cb224 &&
         export OIIO_PATH=${build_dir} &&
       	cmake -DCMAKE_PREFIX_PATH=${build_dir}
               -DCMAKE_INSTALL_PREFIX=${build_dir} ${build_options} &&
